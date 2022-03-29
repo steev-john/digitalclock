@@ -190,6 +190,10 @@ body {
 
 .emoji {
   font-size: 1.2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #5D8BF4;
 }
 
