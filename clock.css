@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+  --pulse1:rgb(255, 166, 0);
+  --pulse2:rgb(128, 94, 0);
+  --primary_bg:#5463FF;
+  --secondary_bg:#444fc9;
+  --primary_text:#5D8BF4;
+  --primary_shadow:#121533;
+  --hover_text:#d4cfcf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary_bg);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clock::before, .clock::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 19em;
+  height: 9em;
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0em 0em 0em var(--pulse1);
+            box-shadow: 0em 0em 0em var(--pulse1);
+  }
+  10% {
+    -webkit-box-shadow: 0em 0em 3em var(--pulse2);
+            box-shadow: 0em 0em 3em var(--pulse2);
+  }
+  20% {
+    -webkit-box-shadow: 0em 0em 1em var(--pulse1);
+            box-shadow: 0em 0em 1em var(--pulse1);
+  }
+  30% {
+    -webkit-box-shadow: 0em 0em 3em var(--pulse2);
+            box-shadow: 0em 0em 3em var(--pulse2);
+  }
+  40% {
+    -webkit-box-shadow: 0em 0em 0em var(--pulse1);
+            box-shadow: 0em 0em 0em var(--pulse1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0em 0em 0em var(--pulse1);
+            box-shadow: 0em 0em 0em var(--pulse1);
+  }
+  10% {
+    -webkit-box-shadow: 0em 0em 3em var(--pulse2);
+            box-shadow: 0em 0em 3em var(--pulse2);
+  }
+  20% {
+    -webkit-box-shadow: 0em 0em 1em var(--pulse1);
+            box-shadow: 0em 0em 1em var(--pulse1);
+  }
+  30% {
+    -webkit-box-shadow: 0em 0em 3em var(--pulse2);
+            box-shadow: 0em 0em 3em var(--pulse2);
+  }
+  40% {
+    -webkit-box-shadow: 0em 0em 0em var(--pulse1);
+            box-shadow: 0em 0em 0em var(--pulse1);
+  }
+}
+
+.clock {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: var(--secondary_bg);
+  -webkit-box-shadow: 0em 0em 0em var(--primary_shadow);
+          box-shadow: 0em 0em 0em var(--primary_shadow);
+  width: 20em;
+  height: 10em;
+  color: #5D8BF4;
+  border-radius: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.clock:hover {
+  -webkit-box-shadow: 0em 0em 1.5em var(--primary_shadow);
+          box-shadow: 0em 0em 1.5em var(--primary_shadow);
+  color: var(--hover_text);
+}
+
+.time-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+.time-info .period {
+  font-size: 2rem;
+}
+
+.time-info .hour, .time-info .minutes {
+  font-size: 4rem;
+}
+
+.time-info .misc {
+  position: absolute;
+  right: 4em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.time-info .part {
+  margin-bottom: 1em;
+}
+
+.date-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .3em;
+}
+
+.date-info .day, .date-info .month, .date-info .year {
+  font-size: 1.2rem;
+}
+
+.date-info .divide {
+  font-size: 0.5rem;
+}
+
+.social {
+  position: absolute;
+  bottom: 22em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+.emoji {
+  font-size: 1.2rem;
+  color: #5D8BF4;
+}
+
+.fa-brands {
+  font-size: 1.5rem;
+  color: #5D8BF4;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.fa-brands:hover {
+  color: white;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=clock.css.map */
